@@ -1,0 +1,1266 @@
+from abc import ABC, abstractmethod
+from timeit import timeit
+from pprint import pprint
+from sys import getsizeof
+from array import array
+from collections import deque
+import math
+# data types
+print('Hello World!')
+print('*' * 10)
+x = 2 + 3
+print(x)
+y = 12
+rating = 4.99
+student_count = 1000
+is_class_opened = True
+# printing the components of the string
+course = "python programming"
+print(len(course))
+print(course[0])
+print(course[-5])
+print(course[0:3])
+print(course[0:])
+print(course[:3])
+print(course[:])
+course1 = "python\"programming"
+print(course1)
+course2 = "python\\programming"
+print(course2)
+course3 = "python\nprogramming"
+print(course3)
+first = "Telesphore"
+last = "Uwabera"
+full = first+" "+last
+print(full)
+# formatted string
+First = "Umuhoza"
+Last = "Yvonne"
+Pookie = f"{First} {Last}"
+print(Pookie)
+GoodLuck = f"{22-3} {18}"
+print(GoodLuck)
+# functions in Python
+Feel = "i will be a programmer"
+print(Feel.upper())
+print(Feel.lower())
+print(Feel.title())
+print(Feel.rstrip())
+print(Feel.find("be"))
+print(Feel.replace("a programmer", "a preacher"))
+# mathematcs in python
+print(2-3)
+print(2/3)
+print(2*3)
+print(2//3)
+print(10**3)
+x = x+3
+print(x)
+print(round(2.68))
+print(abs(-29))
+print(math.ceil(2.2))
+a = 20
+b = int(a)+1
+print(b)
+print(type(a))
+print(f"a: {a} b:{b}")
+fruit = "Apple"
+print(fruit[1:-1])
+10 > 3
+10 >= 3
+# if ...elif...else...
+temperature = 12
+if (temperature > 34):
+    print("it is too hot")
+    print("please drink water")
+    print("it is your choice")
+else:
+    print("no more choice")
+age = 1
+message = "Eligible" if age >= 12 else "Not eligible"
+print(message)
+high_income = False
+good_credit = False
+student = False
+if high_income or good_credit or not student:
+    print("Eligible for loan")
+else:
+    print("Not eligible for loan")
+marks = 19.5
+if 19 <= marks < 30:
+    print("you are trying")
+
+if 10 == "10":
+    print("a")
+elif "bag" > "apple" and "bag" > "cat":
+    print("b")
+else:
+    print("c")
+# for loops
+for number in range(3):
+    print("uri Uwera")
+    print("uri Uwera", number)
+    print("uri Uwera", number + 1)
+    print("uri Uwera", number + 1, (number + 1) * ("."))
+
+for number in range(1, 10, 2):
+    print("uri Uwera", number, (number) * ("."))
+for number in range(1, 4):
+    print("uri Uwera", number, (number) * ("."))
+
+# for...if...break...else
+successful = True
+for number in range(4):
+    print("attempted")
+    if successful:
+        print("successful")
+        break
+else:
+    print("it was attempted four times and failed")
+# Nested loop
+for j in range(4):
+    print("**")
+    for k in range(5):
+        print("&&")
+for d in range(5):
+    for e in range(3):
+        print(f"({d}, {e})")
+for l in range(13):
+    for m in range(l):
+        print(l, " ")
+    print(" ")
+print(type(range(54)))
+print(type(3))
+# iterables
+for z in "python":
+    print(z)
+    for g in [1, 2, 3, 4]:
+        print("Yes")
+shopping_house = [1, 2, 3]
+for i in shopping_house:
+    print(i)
+# while loop
+number = 100
+while number > 0:
+    print(number)
+    number //= 2
+"""command=""
+while command != "quit":
+    command = input(">")
+    print("ECHO", command)
+#infinity loop
+while True:
+    command = input(">")
+    print("ECHO", command)
+    if command.lower()=="quit":
+        break"""
+# exercise
+# first way
+for i in [2, 4, 6, 8]:
+    print(i)
+print("we have 4 even numbers")
+# second way
+count = 0
+for number in range(1, 10):
+    if number % 2 == 0:
+        count += 1
+        print(number)
+print("we have 4 numbers")
+# exercise
+for DaysOfTheWeek in range(1, 7):
+    if DaysOfTheWeek <= 6:
+        print("Dukoze gatandatu.")
+else:
+    print("Nshima isabato yera!")
+# functions
+
+
+def greet():
+    print("Hello Yves")
+    print("Welcome")
+
+
+greet()
+# arguments
+
+
+def greet(first_name, second_name):
+    print(f"Hi {first_name} {second_name}")
+    print("Welcome again")
+
+
+greet("Telesphore", "Uwabera")
+greet("Yves", "Ndacyayisenga")
+# Types of functions
+# 1- a function that performs a task
+# 2- a function that returns the value
+
+
+def another(name):
+    print(f"Hi {name}")
+
+
+another("Telesphore")
+# exercise
+1
+s1 = "Best School"
+s2 = s1
+print(s1 == s2)
+2
+s1 = "Best"
+s2 = s1
+print(s1 is s2)
+3
+s1 = "Best School"
+s2 = "Best School"
+print(s1 == s2)
+4
+l1 = [1, 2, 3]
+l2 = [1, 2, 3]
+print(l1 is l2)
+5
+l1 = [1, 2, 3]
+l2 = l1
+l1.append(4)
+print(l2)
+6
+l1 = [1, 2, 3]
+l2 = l1
+l1 = l1 + [4]
+print(l2)
+7
+
+
+def increment(n):
+    n += 1
+
+
+a = 1
+increment(a)
+print(a)
+8
+
+
+def increment(n):
+    n.append(4)
+
+
+l = [1, 2, 3]
+increment(l)
+print(l)
+9
+
+
+def assign_value(n, v):
+    n = v
+
+
+l1 = [1, 2, 3]
+l2 = [4, 5, 6]
+assign_value(l1, l2)
+print(l1)
+10
+a = (1)
+b = (1)
+a is b
+print(a)
+# Takeaways
+
+
+def food(first_choice, second_choice, third_choice, forth_choice):
+    print(f"I need {first_choice}")
+    print(f"you can take {second_choice}")
+    print(f"Telesphore is good with {third_choice}")
+    print(f"No one who can choose {forth_choice}")
+
+
+food("Potatoes", "Cassava", "Maize", "Watermelon")
+
+
+def greet(first_name, second_name):
+    print(f"Hi {first_name} {second_name}")
+    print("Welcome again")
+
+
+greet("Telesphore", "Uwabera")
+greet("Yves", "Ndacyayisenga")
+# exercise
+# define the add function
+
+
+def add(a, b):
+    sum = a+b
+    return sum
+
+
+# call the add function from the main program
+result = add(2, 3)
+print(result)  # Output: 5
+
+
+def greetings(name):
+    message = "good morning Mr." + name
+    return message
+
+
+result = greetings("Fabrice")
+print(result)
+# python Inheritance
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+
+    def __init__(self):
+        super().__init__()
+        self.id = 89
+
+
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+
+    def __init__(self):
+        super().__init__()
+        self.id += 99
+
+
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+for i in range(3):
+    b = Base()
+print(b.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+    pass
+
+
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+
+    def __init__(self):
+        self.id = 89
+
+
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+
+    def __init__(self):
+        super().__init__()
+
+
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+b = Base()
+print(b.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+    pass
+
+
+b = Base()
+u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+    pass
+
+
+for i in range(4):
+    u = User()
+print(u.id)
+
+
+class Base():
+    """ My base class """
+
+    __nb_instances = 0
+
+    def __init__(self):
+        Base.__nb_instances += 1
+        self.id = Base.__nb_instances
+
+
+class User(Base):
+    """ My User class """
+
+    def __init__(self):
+        self.id = 89
+        super().__init__()
+
+
+u = User()
+print(u.id)
+# keyword arguments
+
+
+def increment(number, by):
+    return number + by
+
+
+print(increment(2, 1))
+
+# default arguments
+
+
+def increment(number, by=1):
+    return number + by
+
+
+print(increment(2))
+
+
+def increment(number, by=1):
+    return number + by
+
+
+print(increment(2, 5))
+# xargs
+
+
+def multiply(*numbers):
+    print(numbers)
+
+
+multiply(1, 2, 3, 4, 5, 6)
+
+
+def multiply(*numbers):
+    for number in numbers:
+        print(number)
+
+
+multiply(1, 2, 3, 4, 5, 6, 7)
+
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+
+print(multiply(1, 2, 3, 4, 5))
+
+# dictionary
+
+
+def save_user(**user):
+    print(user)
+
+
+save_user(id=1, name="John", age=6)
+
+# python input
+
+#!/usr/bin/python3
+
+
+def read_file(filename=""):
+    with open(filename, 'r', encoding='UTF8') as file:
+        content = read_file.read()
+    return content
+
+
+print(read_file)
+
+
+def read_file(filename=""):
+    """A functions that reads a text file and prints it to stdout
+    Args:
+        filename (str): The name of the file to read from.
+    """
+
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
+# exercise
+
+
+def fizz_buzz(input):
+    if (input % 5 == 0) and (input % 3 == 0):
+        return "fizz_buzz"
+    elif input % 5 == 0:
+        return "buzz"
+    elif input % 3 == 0:
+        return "fizz"
+    return input
+
+
+print(fizz_buzz(1))
+
+# data structures
+# lists and accessing the lists
+letters = ["a", "b", "c"]
+letters[0] = "A"
+print(letters)
+print(letters[-1])
+zeros = [0]*5
+combined = zeros+letters
+print(combined)
+numbers = list(range(20))
+print(numbers)
+print(numbers[::2])
+print(numbers[::-1])
+# list unpacking
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+first, second, *other, last = numbers
+print(first)
+print(*other)
+print(f"{first} {second} {last}")
+# loops over lists
+letters = ["a", "b", "c"]
+items = ("a", 0)
+index, letter = items
+for index, letter in enumerate(letters):
+    print(index, letter)
+print(index, letters)
+# add or remove in the list
+letters.append('d')
+print(letters)
+letters.insert(0, '_')
+print(letters)
+letters.pop()
+print(letters)
+letters.pop(0)
+print(letters)
+letters.remove("b")
+print(letters)
+del letters[0:1]
+print(letters)
+letters.clear()
+print(letters)
+# finding items in the list
+alphabets = ["a", "b", "c", "d", "e"]
+print(alphabets.index('a'))
+print(alphabets.count('f'))
+if "f" in alphabets:
+    print(alphabets.index('f'))
+# sorting items in the list
+numbers = [1, 3, -5, 89, 0.5]
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers.sort(reverse=True))
+print(sorted(numbers))
+print(sorted(numbers, reverse=True))
+# sorting items in the tuples
+items = [
+    ('product1', 10),
+    ('product2', 9),
+    ('product3', 2)
+]
+
+
+def sort_item(item):
+    return item[1]
+
+
+items.sort(key=sort_item)
+print(items)
+# Lambda functions
+Airtime = [
+    ('product1', 10),
+    ('product2', 9),
+    ('product3', 2)
+]
+
+
+# syntax for lambda is lambda parameters:expression (this is used when there is no need of using def inh sorting the tuples in the list)
+items.sort(key=lambda item: item[1])
+print(items)
+# map functions
+prices = []
+for item in items:
+    prices.append(item[1])
+    print(prices)
+# for map functions we can use lambda
+x = map(lambda item: item[1], items)
+for item in x:
+    print(item)
+# creating a list through mapping
+prices = list(map(lambda item: item[1], items))
+cost = [item[1] for item in items]
+cost = prices
+print(prices)
+# filter function
+filtered = list(filter(lambda item: item[1] >= 10, items))
+print(filtered)
+# zip function
+list1 = [1, 2, 3]
+list2 = [10, 20, 30]
+zip(list1, list2)
+print(zip(list1, list2))
+print(list(zip("abcd", list1, list2)))
+# stacks with LIFO characters
+browsing_session = []
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+print(browsing_session)
+print(browsing_session.pop())
+print(browsing_session)
+print("redirect", browsing_session[-1])
+if not browsing_session:
+    print('disable')
+# queues with FIFO characters
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.popleft()
+print(queue)
+if not queue:
+    print('Empty')
+# tuples
+point = (1, 2)+(3, 4)
+print(point)
+group = tuple([1, 2])
+print(group)
+Greetings = tuple('Hello World')
+print(Greetings)
+if 3 in point:
+    print("existence")
+# swapping variables
+g = 1
+h = 2
+s = g
+g = h
+h = s
+g, h = h, g
+print("g =", g)
+print("h =", h)
+# arrays in  python
+number = ("i", [1, 2, 3, 4])
+print(number[0])
+# sets in python
+trial1 = [1, 2, 3, 4, 5]
+trial1 = set(trial1)
+trial2 = {1, 4, 6}
+print(trial1 | trial2)
+print(trial1 & trial2)
+print(trial1 - trial2)
+print(trial1 ^ trial2)
+if 1 in trial1:
+    print("Birakwiriye")
+# dictionaries in python
+degrees = {"x": 1, "y": 2}
+degrees = dict(x=1, y=2)
+degrees["x"] = 10
+degrees["z"] = 5
+print(degrees)
+if "a" in degrees:
+    print(degrees["a"])
+print(degrees.get("a", 0))
+del degrees["z"]
+print(degrees)
+# to loop in dictionaries
+for key in degrees:
+    print(key, degrees[key])
+# or
+for key, value in degrees.items():
+    print(key, value)
+# dictionaries comprehensions
+value = []
+for x in range(5):
+    value.append(x*2)
+    print(value)
+# or
+value = {x*2 for x in range(5)}
+print(value)
+# difference between dictionary and sets
+value = {x*2 for x in range(5)}  # set
+print(value)
+value = {x: x*2 for x in range(5)}  # dictionary
+print(value)
+# generators
+value = (x*2 for x in range(1000))
+print(value)
+for x in value:
+    print(x)
+print("gen: ", getsizeof(value))
+value = [x*2 for x in range(1000)]
+print("list: ", getsizeof(value))
+# unpacking operators
+unpack = [1, 2, 3]
+print(*unpack)
+print(1, 2, 3)
+hello = [*range(5), *"hello"]
+print(hello)
+print(list(hello))
+# unpacking dictionaries
+deal = {"x": 1}
+feel = {"x": 2, "y": 3}
+combined = {**deal, **feel, "z": 12}
+print(combined)
+# exercise
+sentence = "This is a person!"
+
+
+char_frequency = {}
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency
+char_frequency_sorted = sorted(
+    char_frequency.items(), key=lambda kv: kv[1], reverse=True)
+print(char_frequency_sorted)
+# exceptions and handling them
+'''try:
+    age= int(input("Age: "))
+    xfactor= 10/age
+except ValueError as ex:
+    print("you didn't put a valid age")
+    print(ex)
+    print(type(ex))
+except ZeroDivisioError:
+    print("age can not be zero")
+#or
+except(ValueError, ZeroDivisionError):
+    print("you didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+print("execution continues") '''
+# cleaning up
+'''try:
+    file = open("app.py")
+    age= int(input("Age: "))
+    xfactor= 10/age
+except ValueError as ex:
+    print("you didn't put a valid age")
+    print(ex)
+    print(type(ex))
+except ZeroDivisionError:
+    print("age can not be zero")
+#or
+except(ValueError, ZeroDivisionError):
+    print("you didn't enter a valid age.")
+else:
+    print("No exceptions were thrown.")
+finally:
+    file.close()'''
+# with statements
+'''try:
+    with open("HelloWorld.py") as file:
+        print("file opened.")
+    age=int(input("Age: "))
+    xfactor=10/age
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter a valid age.")
+else:
+    print("No exceptions were thrown")'''
+# raising exceptions
+'''def calculate_xfactor(age):
+    if age<=0:
+        raise ValueError("Age can not be 0 or less")
+    return 10/age
+
+
+try:
+    calculate_xfactor(-1)
+except ValueError as error:
+    print(error)'''
+
+code1 = """
+def calculate_xfactor(age):
+    if age<=0:
+        raise ValueError("Age can not be 0 or less")
+    return 10/age
+
+
+try:
+    calculate_xfactor(-1)
+except ValueError as error:
+    print(error)
+"""
+
+
+code2 = """
+def calculate_xfactor(age):
+    if age<=0:
+        return none
+    return 10/age
+
+
+
+xfactor = calculate_xfactor(-1)
+if xfactor ==None:
+    pass
+"""
+print("first code=", timeit(code1, number=10000))
+print("second code=", timeit(code1, number=10000))
+# creating classes
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        print(f"Point ({self.x}, {self.y})")
+
+    def draw(self):
+        print("draw")
+
+
+point = Point(1, 2)
+print(point.x)
+print(type(point))
+print(isinstance(point, Point))
+# classes vs instances attributes
+# a
+# for def __init__(self, x, y)
+point = Point(1, 2)
+point.draw()
+another = Point(3, 4)
+another.draw()
+# for def draw()
+Point.default_color = "Yellow"
+print(point.default_color)
+print(Point.default_color)
+print(another.default_color)
+# b
+# defining the origin at class level
+
+
+@classmethod
+def zero(cls):
+    return cls(0, 0)
+    point = Point.zero()
+    point.draw()
+# magic methods
+
+
+def __str__(self):
+    return f"({self.x}, {self.y})"
+
+
+point = Point(1, 2)
+print(point)
+print(str(point))
+
+
+def __eq__(self, other):
+    return self.x == other.x and self.y == other.y
+
+
+# by using different magic methods we use all operators
+point = Point(1, 2)
+other = Point(1, 2)
+'''print(point=other)'''
+
+
+def __gt__(self, other):
+    return self.x > other.x and self.y > other.y
+
+
+point = Point(12, 23)
+other = Point(1, 3)
+# making custom containers
+
+
+class TagCloud:
+    def __init__(self):
+        self.tags = {}
+
+    def add(self, tag):
+        self.tag[tag.lower()] = self.tags.get(tag, 0) + 1
+
+    def add(self, tag):
+        self.tags[tag.lower()] = self.tags.get(tag.lower(), 0)
+
+    def __setitem__(self, tag, count):
+        self.tags[tag.lower()] = count
+
+    def __len__(self):
+        return len(self.tags)
+
+    def __iter__(self):
+        return iter(self.tags)
+
+
+cloud = TagCloud()
+len(cloud)
+cloud["python"] = 10
+for tag in cloud:
+    print(tag)
+cloud.add("python")
+cloud.add("Python")
+print(cloud.tags)
+# private members and properties
+
+
+class Product:
+    def __init__(self, price):
+        self.__price = price
+
+    def get_price(self):
+        return self.__price
+
+    def set_price(self, value):
+        if value < 0:
+            raise ValueError("Price can not be negative.")
+        self.__price
+    price = property(get_price, set_price)
+
+
+product = Product(-50)
+# @classmethod change the instance method to class method
+# @property convert the instance into property
+
+
+class Product:
+    def __init__(self, price):
+        self.price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot be negative")
+        self.__price = value
+        product = Product(-10)
+        product.price = 2
+        print(product.price)
+# inhertance
+
+
+class Animal(object):
+    def __init__(self):
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+# Animal: Parent, Base class
+# Mammal: Child, Sub class
+
+
+class Mammal(Animal):
+    def eat(self):
+        print("eat")
+
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+m = Mammal()
+m.eat()
+print(m.age)
+print(isinstance(m, Mammal))
+print(isinstance(m, Animal))
+print(isinstance(m, object))
+print(issubclass(Mammal, object))
+# Method overriding
+
+
+class Animal:
+    def __init__(self):
+        print("Animal Constructor")
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+
+class Mammal(Animal):
+    def __init__(self):
+        # this super().__init__() will cause the printer to print the outputs from the Base class
+        super().__init__()
+        print("Mammal Constructor")
+        self.weight = 2
+
+
+m = Mammal()
+print(m.age)
+print(m.weight)
+# Multi-level inhertance
+
+
+class Animal:
+    def eat(self):
+        print("eat")
+
+
+class Bird(Animal):
+    def fly(self):
+        print("fly")
+
+
+class Chicken(Bird):
+    pass
+# Multiple inhertance
+
+
+class Employee:
+    def greet(self):
+        print("Employee greet")
+
+
+class Person:
+    def greet(self):
+        print("Person greet")
+
+
+class Manager(Employee, Person):
+    pass
+
+
+manager = Manager()
+manager.greet()
+# example of inhertance
+
+
+class InvalidOperationError(Exception):
+    pass
+
+
+class Stream:
+    def __init__(self):
+        self.opened = False
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already opened")
+        self.opened = True
+
+    def close(self):
+        if not self.opened:
+            raise InvalidOperationError("Stream is already closed")
+        self.opened = False
+
+
+class FileStream(Stream):
+    def read(self):
+        print("Reading data from a file")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("Reading data from a network")
+
+# abstract base classes
+
+
+class InvalidOperationError(Exception):
+    pass
+
+
+class Stream:
+    def __init__(self):
+        self.opened = False
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already opened")
+        self.opened = True
+
+    def close(self):
+        if self.opened:
+            raise InvalidOperationError("Stream is already closed")
+        self.opened = False
+
+    @abstractmethod
+    def read(self):
+        pass
+
+
+class Stream:
+    def __init__(self):
+        self.opened = False
+
+
+class FileStream(Stream):
+    def read(self):
+        print("Reading data from a file")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("Reading data from a network")
+
+
+class MemoryStream(Stream):
+    def read(self):
+        print("Reading data from a memory stream")
+
+
+stream = Stream()
+''''stream.open()'''
+#polymorphism
+class UIControl(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+class TextBox(UIControl):
+    def draw(self):
+        print("TextBox")
+
+class DropDownList(UIControl):
+    def draw(self):
+        print("DropDownList")
+def draw(controls):
+        for control in controls:
+            control.draw()
+ddl=DropDownList()
+textbox= TextBox()
+draw([ddl, textbox])
+#duck typing
+#extending Build in types
+class Text(str):
+    def duplicate(self):
+        return self + self
+
+text=Text("Python")
+print(text.lower())
+print(text.upper())
+print(text.duplicate())
+
+class TrackableList(list):
+    def append(self, object):
+        print("Append called")
+        super().append(object)
+
+list=TrackableList()
+list.append("1")
+#Data classes
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __eq__(self, other):
+        return self.x == other.x and self.y ==other.y
+    
+
+
+p1= Point(1, 2)
+p2= Point(1, 2)
+print(id(p1))
+print(id(p2))
+print(p1==p2)
+
+from collections import namedtuple
+
+Point=namedtuple("Point", ["x", "y"])
+p1=Point(x=1, y=2)
+p2=Point(x=1, y=2)
+print(p1==p2)
